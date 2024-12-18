@@ -23,19 +23,15 @@ def create_app() -> FastAPI:
     app = FastAPI(debug=Config.DEBUG)
     
     # Подключение маршрутов
-    from app.routes import auth, accounts, categories, transactions, analytics
+    from app.routes import auth, accounts, categories, transactions, analytics, main
     app.include_router(auth.router)
     app.include_router(accounts.router)
     app.include_router(categories.router)
     app.include_router(transactions.router)
     app.include_router(analytics.router)
+    app.include_router(main.router)  # Подключаем маршрут для главной страницы
     
     # Подключение статических файлов
     app.mount("/static", StaticFiles(directory="app/static"), name="static")
-    
-    # Маршрут для главной страницы
-    @app.get("/", response_class=HTMLResponse)
-    async def read_root(request: Request):
-        return templates.TemplateResponse("index.html", {"request": request})
     
     return app

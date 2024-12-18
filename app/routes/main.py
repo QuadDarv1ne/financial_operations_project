@@ -1,19 +1,12 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+
+# Создаем экземпляр Jinja2Templates, указывая директорию шаблонов
+templates = Jinja2Templates(directory="app/templates")
 
 router = APIRouter()
 
 @router.get("/", response_class=HTMLResponse)
-async def read_root():
-    html_content = """
-    <html>
-        <head>
-            <title>Главная страница</title>
-        </head>
-        <body>
-            <h1>Добро пожаловать на главную страницу!</h1>
-            <p>Это главная страница вашего сайта.</p>
-        </body>
-    </html>
-    """
-    return HTMLResponse(content=html_content)
+async def read_root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})

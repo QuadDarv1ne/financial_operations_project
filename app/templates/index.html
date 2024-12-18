@@ -6,12 +6,41 @@
 
 {% block content %}
 <div class="container">
-    <div class="jumbotron mt-4">
+    <div class="jumbotron mt-4 bg-light text-center">
         <h1 class="display-4">Добро пожаловать на главную страницу.</h1>
         <p class="lead">Это главная страница вашего сайта.</p>
         <hr class="my-4">
         <p>Здесь вы можете управлять своими финансами, анализировать свои расходы и доходы.</p>
         <a class="btn btn-primary btn-lg" href="/dashboard" role="button">Перейти в личный кабинет</a>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Управление финансами</h5>
+                    <p class="card-text">Отслеживайте свои доходы и расходы с легкостью.</p>
+                    <a href="/accounts" class="btn btn-outline-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Аналитика</h5>
+                    <p class="card-text">Анализируйте свои финансовые данные и получайте ценные инсайты.</p>
+                    <a href="/analytics" class="btn btn-outline-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Транзакции</h5>
+                    <p class="card-text">Просматривайте и управляйте своими транзакциями.</p>
+                    <a href="/transactions" class="btn btn-outline-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

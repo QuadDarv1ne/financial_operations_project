@@ -20,19 +20,19 @@
 ### 3. Создание ветки
 
 1. Создайте новую ветку для вашей работы:
-  ```bash
-  git checkout -b имя_вашей_ветки
-  ```
+   ```bash
+   git checkout -b имя_вашей_ветки
+   ```
 Рекомендуется использовать описательные имена веток, например `fix-bug-issue123` или `add-new-feature`.
 
 ### 4. Установка зависимостей
 
 1. Создайте и активируйте виртуальное окружение, затем установите зависимости:
-  ```bash
-  python -m venv venv
-  source venv/bin/activate   # В Windows: venv\Scripts\activate
-  pip install -r requirements.txt
-  ```
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # В Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
 
 ### 5. Внесение изменений
 
@@ -43,22 +43,22 @@
 ### 6. Тестирование
 
 1. Добавьте или обновите тесты для ваших изменений и убедитесь, что все тесты проходят успешно:
-  ```bash
-  pytest
-  ```
+   ```bash
+   pytest
+   ```
 
 ### 7. Коммиты и пуш
 
 1. Сделайте коммиты с описательными сообщениями:
-  ```bash
-  git add .
-  git commit -m "Краткое описание ваших изменений"
-  ```
+   ```bash
+   git add .
+   git commit -m "Краткое описание ваших изменений"
+   ```
 
 2. Запушьте ваши изменения в ваш форк:
-  ```bash
-  git push origin имя_вашей_ветки
-  ```
+   ```bash
+   git push origin имя_вашей_ветки
+   ```
 
 ### 8. Pull Request
 

@@ -8,6 +8,8 @@ from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from app.config import Config
+from fastapi.requests import Request
+from fastapi.responses import HTMLResponse
 
 Base: DeclarativeMeta = declarative_base()
 
@@ -30,5 +32,10 @@ def create_app() -> FastAPI:
     
     # Подключение статических файлов
     app.mount("/static", StaticFiles(directory="app/static"), name="static")
+    
+    # Маршрут для главной страницы
+    @app.get("/", response_class=HTMLResponse)
+    async def read_root(request: Request):
+        return templates.TemplateResponse("index.html", {"request": request})
     
     return app

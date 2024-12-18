@@ -17,7 +17,6 @@ class CategoryCreate(BaseModel):
     class Config:
         from_attributes = True
 
-
 class CategoryOut(BaseModel):
     """
     Схема для отображения данных о категории.
@@ -30,6 +29,17 @@ class CategoryOut(BaseModel):
     class Config:
         from_attributes = True
 
+class CategoryResponse(BaseModel):
+    """
+    Схема для отображения данных о категории.
+    Используется для получения данных о категории.
+    """
+    id: int
+    name: str
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
 
 class AccountCreate(BaseModel):
     """
@@ -39,7 +49,6 @@ class AccountCreate(BaseModel):
 
     class Config:
         from_attributes = True
-
 
 class AccountOut(BaseModel):
     """
@@ -53,7 +62,6 @@ class AccountOut(BaseModel):
     class Config:
         from_attributes = True
 
-
 class TransactionCreate(BaseModel):
     """
     Схема для создания новой транзакции.
@@ -66,7 +74,6 @@ class TransactionCreate(BaseModel):
 
     class Config:
         from_attributes = True
-
 
 class TransactionOut(BaseModel):
     """
@@ -83,6 +90,21 @@ class TransactionOut(BaseModel):
     class Config:
         from_attributes = True
 
+class TransactionResponse(BaseModel):
+    """
+    Схема для отображения данных о транзакции.
+    Используется для получения данных о транзакции.
+    """
+    id: int
+    account_id: int
+    category_id: int
+    type: str  # Тип транзакции (доход или расход)
+    amount: float
+    description: Optional[str] = None
+    transaction_date: datetime
+
+    class Config:
+        from_attributes = True
 
 class UserCreate(BaseModel):
     """
@@ -95,7 +117,6 @@ class UserCreate(BaseModel):
     class Config:
         from_attributes = True
 
-
 class UserOut(BaseModel):
     """
     Схема для отображения данных о пользователе.
@@ -104,6 +125,16 @@ class UserOut(BaseModel):
     username: str
     email: str
     created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+class UserLogin(BaseModel):
+    """
+    Схема для входа пользователя.
+    """
+    email: str
+    password: str
 
     class Config:
         from_attributes = True

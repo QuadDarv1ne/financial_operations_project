@@ -3,36 +3,46 @@ venv/
 .env/
 
 # Игнорировать базу данных SQLite
-instance/site.db
+instance/
+*.sqlite3
 
 # Игнорировать файлы конфигурации среды разработки
-*.vscode/
+.vscode/
 .idea/
 
 # Игнорировать файлы Python
 *.pyc
 *.pyo
 __pycache__/
+*.pyd
 
 # Игнорировать логи
 *.log
 
 # Игнорировать сгенерированные файлы сессий
-*.sqlite3
+*.session
 
 # Игнорировать файлы для тестирования (если они существуют)
-*.coveragerc
-*.tox/
-*.nox/
-*.coverage
+.coverage
+.tox/
+.nox/
+.coveragerc
 nosetests.xml
 coverage.xml
 *.hypothesis/
 
-# Игнорировать скомпилированные файлы Python
-*.pyd
-*.pyo
-
 # Игнорировать временные файлы
 *.bak
 *.swp
+*.tmp
+
+# Игнорировать кэш-библиотеки
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Игнорировать файлы и папки, создаваемые IDE и редакторами
+*.idea/
+*.vscode/
+
+# Игнорировать файлы среды разработки PyCharm
+*.iml

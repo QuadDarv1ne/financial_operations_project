@@ -1,27 +1,30 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h1>Список транзакций</h1>
-<table>
-    <thead>
-        <tr>
-            <th>Дата</th>
-            <th>Сумма</th>
-            <th>Тип</th>
-            <th>Категория</th>
-            <th>Описание</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for transaction in transactions %}
+<div class="container">
+    <h1 class="my-4">Список транзакций</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
             <tr>
-                <td>{{ transaction.date }}</td>
-                <td>{{ transaction.amount }}</td>
-                <td>{{ transaction.type }}</td>
-                <td>{{ transaction.category.name }}</td>
-                <td>{{ transaction.description }}</td>
+                <th scope="col">Дата</th>
+                <th scope="col">Сумма</th>
+                <th scope="col">Тип</th>
+                <th scope="col">Категория</th>
+                <th scope="col">Описание</th>
             </tr>
-        {% endfor %}
-    </tbody>
-</table>
-<a href="/transactions/new">Добавить транзакцию</a>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.date }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.type }}</td>
+                    <td>{{ transaction.category.name }}</td>
+                    <td>{{ transaction.description }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary mt-3" href="/transactions/new" role="button">Добавить транзакцию</a>
+</div>
 {% endblock %}

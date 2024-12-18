@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-6">
@@ -6,11 +7,11 @@
         <form action="/auth/login" method="post" class="mt-4">
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" name="email" class="form-control" required>
+                <input type="email" id="email" name="email" class="form-control" required autocomplete="email">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Пароль:</label>
-                <input type="password" name="password" class="form-control" required>
+                <input type="password" id="password" name="password" class="form-control" required autocomplete="current-password">
             </div>
             <button type="submit" class="btn btn-primary w-100">Войти</button>
         </form>

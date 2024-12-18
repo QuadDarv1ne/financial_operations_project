@@ -1,12 +1,19 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h1>Детали счета: {{ account.name }}</h1>
-<p>Баланс: {{ account.balance }}</p>
-<h2>Транзакции</h2>
-<ul>
-    {% for transaction in transactions %}
-        <li>{{ transaction.date }} - {{ transaction.amount }} ({{ transaction.type }})</li>
-    {% endfor %}
-</ul>
-<a href="/transactions/new">Добавить транзакцию</a>
+<div class="container">
+    <h1 class="my-4">Детали счета: {{ account.name }}</h1>
+    <p><strong>Баланс:</strong> {{ account.balance }}</p>
+    
+    <h2 class="mt-4">Транзакции</h2>
+    <ul class="list-group">
+        {% for transaction in transactions %}
+            <li class="list-group-item">
+                {{ transaction.date }} - {{ transaction.amount }} ({{ transaction.type }})
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <a class="btn btn-primary mt-3" href="/transactions/new" role="button">Добавить транзакцию</a>
+</div>
 {% endblock %}

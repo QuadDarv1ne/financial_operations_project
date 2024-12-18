@@ -1,7 +1,40 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h1>Аналитика</h1>
-<p>Общий доход: {{ analytics.total_income }}</p>
-<p>Общий расход: {{ analytics.total_expense }}</p>
-<p>Баланс: {{ analytics.balance }}</p>
+<div class="container">
+    <h1 class="my-4">Аналитика</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Общий доход</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ analytics.total_income }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-header">Общий расход</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ analytics.total_expense }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-info mb-3">
+                <div class="card-header">Баланс</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ analytics.balance }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Секция для будущих графиков или диаграмм -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2>Графики и диаграммы</h2>
+            <!-- Здесь можно добавить графики или диаграммы -->
+        </div>
+    </div>
+</div>
 {% endblock %}

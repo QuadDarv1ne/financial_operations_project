@@ -143,11 +143,13 @@ financial_operations_project/
   - `description`: Описание (опционально)  
   - `transaction_date`: Дата транзакции
 
+---
+
 ## Лицензия
 
 [Проект распространяется под лицензией MIT](https://github.com/QuadDarv1ne/financial_operations_project/blob/master/LICENCE)
 
-
+---
 
 **Автор:** Дуплей Максим Игоревич
 

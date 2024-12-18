@@ -23,6 +23,11 @@
 financial_operations_project/
 ├── app/                          # Основное приложение
 │   ├── __init__.py               # Инициализация приложения FastAPI
+│   ├── config.py                 # 
+│   ├── crud.py                   # 
+│   ├── dependencies.py           # 
+│   ├── schemas.py                # 
+│   ├── utils.py                  # 
 │   ├── main.py                   # Точка входа в приложение
 │   ├── models.py                 # SQLAlchemy-модели для базы данных
 │   ├── routes/                   # Маршруты приложения
@@ -31,6 +36,7 @@ financial_operations_project/
 │   │   ├── accounts.py           # Маршруты для работы со счетами пользователей
 │   │   ├── categories.py         # Маршруты для работы с категориями расходов и доходов
 │   │   ├── transactions.py       # Маршруты для работы с финансовыми транзакциями
+│   │   ├── main.py               # 
 │   │   └── analytics.py          # Маршруты для аналитики и отчетов
 │   └── templates/                # Шаблоны HTML для интерфейса
 │       ├── base.html             # Базовый шаблон
@@ -39,11 +45,14 @@ financial_operations_project/
 │       ├── register.html         # Страница регистрации
 │       ├── account_details.html  # Детализация счетов
 │       ├── analytics.html        # Страница аналитики
+│       ├── index.html            # Главная страница
 │       └── transaction_list.html # Список транзакций
 │
 ├── migrations/                   # Миграции базы данных (если используется Alembic)
+├── CONTRIBUTING.md               #
 ├── financial_operations.db       # Файл базы данных SQLite
 ├── README.md                     # Описание проекта, инструкция по установке и запуску
+├── LICENCE                       #
 ├── requirements.txt              # Список зависимостей Python
 ├── .env                          # Конфигурация приложения (секреты и настройки окружения)
 └── run.py                        # Файл для запуска приложения

@@ -11,7 +11,7 @@ from jose import JWTError, jwt
 from datetime import datetime, timedelta
 
 # Конфигурация JWT
-SECRET_KEY = "your-secret-key"
+SECRET_KEY = "1337"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 

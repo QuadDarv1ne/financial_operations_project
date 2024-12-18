@@ -154,6 +154,14 @@ financial_operations_project/
 
 ---
 
+## Запуск проекта
+
+```bash
+uvicorn app.main:app --reload
+```
+
+---
+
 ## Лицензия
 
 [Проект распространяется под лицензией MIT](https://github.com/QuadDarv1ne/financial_operations_project/blob/master/LICENCE)

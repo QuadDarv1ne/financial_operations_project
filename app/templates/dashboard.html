@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Добро пожаловать, {{ user.username }}!</h1>
+<div class="dashboard">
+    <section>
+        <h2>Ваши счета</h2>
+        <ul>
+            {% for account in accounts %}
+                <li>
+                    <a href="/accounts/{{ account.id }}">{{ account.name }}</a> - Баланс: {{ account.balance }}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Последние транзакции</h2>
+        <ul>
+            {% for transaction in transactions %}
+                <li>{{ transaction.date }} - {{ transaction.amount }} ({{ transaction.type }})</li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+{% endblock %}

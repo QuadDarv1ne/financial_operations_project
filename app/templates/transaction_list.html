@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Список транзакций</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Дата</th>
+            <th>Сумма</th>
+            <th>Тип</th>
+            <th>Категория</th>
+            <th>Описание</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.date }}</td>
+                <td>{{ transaction.amount }}</td>
+                <td>{{ transaction.type }}</td>
+                <td>{{ transaction.category.name }}</td>
+                <td>{{ transaction.description }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/transactions/new">Добавить транзакцию</a>
+{% endblock %}

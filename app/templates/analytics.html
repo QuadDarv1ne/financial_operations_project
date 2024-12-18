@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Аналитика</h1>
+<p>Общий доход: {{ analytics.total_income }}</p>
+<p>Общий расход: {{ analytics.total_expense }}</p>
+<p>Баланс: {{ analytics.balance }}</p>
+{% endblock %}

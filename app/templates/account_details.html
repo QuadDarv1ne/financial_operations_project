@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Детали счета: {{ account.name }}</h1>
+<p>Баланс: {{ account.balance }}</p>
+<h2>Транзакции</h2>
+<ul>
+    {% for transaction in transactions %}
+        <li>{{ transaction.date }} - {{ transaction.amount }} ({{ transaction.type }})</li>
+    {% endfor %}
+</ul>
+<a href="/transactions/new">Добавить транзакцию</a>
+{% endblock %}
